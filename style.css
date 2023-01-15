@@ -1,0 +1,782 @@
+/* 
+
+---Font & Spacing---
+FONT SIZE SYSTEM (px) 1rem - 10px
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+SPACING SYSTEM (px) 1rem = 10px
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+---Font weights---
+Defalt - 400
+Medium - 500
+Bold - 700
+
+
+---Line heights---
+Default: 1
+<h> 1.1
+<p> 1.35
+<p> 1.8
+
+
+--- COLORS--- 
+Primary - #5F8D4E
+Background - #dfe8dc
+HoverDarkGreen - #436337
+ButtonDarkWhite - #e6e6e6
+StepDarkWhite - #ddd
+Grey: #555
+Dark-Grey - #333
+Testimonial-Names-Grey - #888
+
+--- LETTER SPACING ---
+(-1px)
+
+
+--- SHADOWS
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+Input-form - 0 2px 2px rgba(0, 0, 0, 0.3);
+
+
+
+---BORDER-RADIUS---
+1.3rem
+50%
+
+
+---WHITESPACE---
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+html {
+  /* 10px / 16px = 0.625 = 62.5% - to use rem later. */
+  font-size: 62.5%;
+}
+
+/*******************
+REUSABLE CONTENT
+********************/
+
+.container {
+  /* container to automaticly center the container */
+  /* standard 1200px with most pages */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  margin-bottom: 9.6rem;
+}
+
+.grid:last-child {
+  margin-bottom: 0;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.header-secondary,
+.heading-hero,
+.details-text-heading {
+  font-weight: 700;
+  line-height: 1.1;
+  color: #333;
+  letter-spacing: -1px;
+}
+
+.header-secondary {
+  line-height: 1.1;
+  margin-bottom: 9.6rem;
+  font-size: 4.4rem;
+}
+
+.heading-hero {
+  margin-bottom: 3.2rem;
+  font-size: 4.4rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 1.3rem;
+  font-weight: 500;
+  /* using transition to create animation */
+  transition: all 0.7s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--primary:link,
+.btn--primary:visited {
+  background-color: #5f8d4e;
+  color: #fff;
+}
+
+.btn--primary:hover,
+.btn--primary:active {
+  background-color: #436337;
+  color: #fff;
+}
+
+.btn--secondary:link,
+.btn--secondary:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.button-form:hover,
+.btn--secondary:hover,
+.btn--secondary:active {
+  background-color: #e6e6e6;
+  color: #555;
+  /* use box-shadow to avoid border - not to expand the button */
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.margin-small-right {
+  margin-right: 2rem !important;
+}
+
+.details-text-heading {
+  font-size: 3rem;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #5f8d4e;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.diet-list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #5f8d4e;
+}
+
+/*******************
+NAV-BAR
+********************/
+
+.header {
+  background-color: #dfe8dc;
+  display: flex;
+  justify-content: space-between;
+  /* AI to verticly align items. */
+  align-items: center;
+
+  /* setting the height instead of padding to make it sticky */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  color: #333;
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-green {
+  color: #5f8d4e;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.6rem;
+  transition: all 0.7s;
+  color: #333;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #5f8d4e;
+}
+
+.nav-cta:link,
+.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 1.3rem;
+  color: #fff;
+  background-color: #5f8d4e;
+}
+
+.nav-cta:hover,
+.nav-cta:active {
+  background-color: #436337;
+}
+
+/*******************
+HERO SECTION
+********************/
+
+.section-hero {
+  background-color: #dfe8dc;
+  /* use padding to crete spacing between sections (TRBL) */
+  padding: 4.8rem 0 9.6rem;
+}
+
+.hero {
+  /* center the container */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  /* max-width to make it responsive, padding makes it safe when user is having small screen */
+  max-width: 130rem;
+  display: grid;
+  /* 2 columns next to each other */
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+.hero-description {
+  font-size: 2rem;
+  margin-bottom: 4.8rem;
+  line-height: 1.35;
+}
+
+.yearly-delivery {
+  display: flex;
+  margin-top: 6.2rem;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.delivery-img {
+  display: flex;
+}
+
+.delivery-img img {
+  height: 4.4rem;
+  width: 4.4rem;
+  border-radius: 50%;
+  /* to overlap the images */
+  margin-right: -1.6rem;
+  border: 2px solid #dfe8dc;
+}
+
+/* Reset only the last img to keep the gap */
+.delivery-img img:last-child {
+  margin: 0;
+}
+
+.delivery-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.delivery-number {
+  color: #5f8d4e;
+  font-weight: 700;
+}
+
+/*******************
+DETAILS SECTION
+********************/
+
+.section-details {
+  padding: 9.6rem 0;
+}
+
+.step-img {
+  width: 35%;
+}
+
+.step-number {
+  font-size: 7.4rem;
+  font-weight: 700;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.details-img-box {
+  /* Centering the image in box hor and ver */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*******************
+MEALS SECTION
+********************/
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 100px;
+  color: #333;
+  font-weight: 700;
+}
+
+.tag--vegetarian {
+  background-color: #5f8d4e;
+}
+
+.tag--vegan {
+  background-color: #5f8d4e;
+}
+
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 1.3rem;
+  /* using the overflow, so the img corners are also rounded */
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.055);
+}
+
+.meal-tags {
+  margin: 1.2rem 0;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.meal-name {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+
+.meal-content {
+  padding: 1.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #5f8d4e;
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #5f8d4e;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #436337;
+  border-bottom: 1px solid transparent;
+}
+
+/*******************
+TESTIMONIALS SECTION
+********************/
+
+.section-testimonials {
+  background-color: #dfe8dc;
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  /* to remove the unwanted big gaps in smaller screen */
+  align-items: center;
+}
+
+.testimonial-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 9.6rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 100px;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.35;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #888;
+  margin-top: 1.2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  padding: 1.2rem;
+}
+
+.gallery-item img {
+  /* to remove the small spaces between images */
+  display: block;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/*******************
+MEALS SECTION
+********************/
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.pricing-plan {
+  border-radius: 1.3rem;
+  /* 75% of the available width in grid */
+  width: 75%;
+}
+
+.pricing-plan--first {
+  justify-self: end;
+  border: 2px solid #dfe8dc;
+  /* Remove 2px from the padding, because of the border! */
+  padding: 4.6rem;
+}
+
+.pricing-plan--premium {
+  background-color: #dfe8dc;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-plan--premium::after {
+  position: absolute;
+  content: "Best Value";
+  top: 5%;
+  right: -8%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: #ffd43b;
+  color: #333;
+  padding: 0.8rem 3.2rem;
+  transform: rotate(45deg);
+}
+
+.plan-name {
+  color: #5f8d4e;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 2.4rem;
+}
+
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.35;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-sign-up {
+  text-align: center;
+  margin-top: 2.4rem;
+}
+
+/*******************
+CTA SECTION
+********************/
+
+/* .section-cta {
+  padding: 9.6rem 0;
+} */
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #dfe8dc; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.25);
+  border-radius: 1.3rem;
+  /* creating the gradient */
+  background-image: linear-gradient(to right bottom, #dfe8dc, #5f8d4e);
+  overflow: hidden;
+}
+
+.cta-text-box {
+  color: #333;
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+}
+
+.cta-text-box .header-secondary {
+  color: #333;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 2.4rem;
+}
+
+.cta-form {
+  display: grid;
+  row-gap: 1.8rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input {
+  width: 100%;
+  padding: 0.8rem;
+  font-family: inherit;
+  background-color: #dfe8dc;
+  border: none;
+  border-radius: 1.3rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* button w/o href (add to list) */
+.button-form {
+  margin-top: 2.4rem;
+  padding: 1.2rem;
+  color: #555;
+  font-weight: 500;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-img-box {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(224, 233, 221, 0.25),
+      rgba(95, 140, 79, 0.25)
+    ),
+    url(/img/eating.jpg);
+  /* sizing the img */
+  background-size: cover;
+  background-position: center;
+}
+
+/*******************
+FOOTER SECTION
+********************/
+
+.footer {
+  padding: 12.8rem 0;
+}
+
+.grid--footer {
+  grid-template-columns: 3fr 3fr 2fr 2fr 2fr;
+  justify-content: center;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 2.4rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: #888;
+  line-height: 1.35;
+  /* pushing the copytight max to the bottom. Check the logo-col */
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4.2rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.35;
+  color: #888;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  color: #888;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #888;
+  transition: all 0.5s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
