@@ -1,6 +1,6 @@
 # Custom Cuisine Website
 
-Static marketing page for a fictional AI-powered meal plan service. Built with semantic HTML and modern CSS—no build tools or other dependencies.
+Static marketing page for a fictional AI-powered meal plan service. Built with semantic HTML and modern CSS - no build tools or other dependencies.
 
 ## Screenshots
 
