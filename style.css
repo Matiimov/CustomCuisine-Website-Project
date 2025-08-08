@@ -695,7 +695,7 @@ CTA SECTION
       rgba(224, 233, 221, 0.25),
       rgba(95, 140, 79, 0.25)
     ),
-    url(/img/eating.jpg);
+    url(img/eating.jpg);
   /* sizing the img */
   background-size: cover;
   background-position: center;
