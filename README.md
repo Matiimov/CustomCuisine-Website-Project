@@ -5,25 +5,25 @@ Static marketing page for a fictional AI-powered meal plan service. Built with s
 ## Screenshots
 
 ### Home Page
-![Home Page](screenshots/Home.png)
+<img src="screenshots/Home.png" alt="Home Page" width="600"/>
 
 ### Meals Page
-![Meals Page](screenshots/Meals.png)
+<img src="screenshots/Meals.png" alt="Meals Page" width="600"/>
 
 ### Testimonials Page
-![Testimonials Page](screenshots/Testimonials.png)
+<img src="screenshots/Testimonials.png" alt="Testimonials Page" width="600"/>
 
 ### Pricing Page
-![Pricing Page](screenshots/Pricing.png)
+<img src="screenshots/Pricing.png" alt="Pricing Page" width="600"/>
 
 ### Sign Up Page
-![Sign Up Page](screenshots/SignUp.png)
+<img src="screenshots/SignUp.png" alt="Sign Up Page" width="600"/>
+
+------------
 
 ## Prerequisites
 - Git to clone the repository (or download the ZIP from GitHub)
 - [Python 3](https://www.python.org/) for the built-in development server
-
------------------
 
 ## Run locally
 1. **Get the code**
