@@ -2,9 +2,28 @@
 
 Static marketing page for a fictional AI-powered meal plan service. Built with semantic HTML and modern CSS—no build tools or other dependencies.
 
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/Home.png)
+
+### Meals Page
+![Meals Page](screenshots/Meals.png)
+
+### Testimonials Page
+![Testimonials Page](screenshots/Testimonials.png)
+
+### Pricing Page
+![Pricing Page](screenshots/Pricing.png)
+
+### Sign Up Page
+![Sign Up Page](screenshots/SignUp.png)
+
 ## Prerequisites
 - Git to clone the repository (or download the ZIP from GitHub)
 - [Python 3](https://www.python.org/) for the built-in development server
+
+-----------------
 
 ## Run locally
 1. **Get the code**
